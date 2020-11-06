@@ -52,58 +52,6 @@ class GeneralValidForm {
 
     sendGeneralValidForm(){}
 
-    sendLPCryptoBookAppForm(){
-        let FirstName = document.getElementById("inputFirstNameId").value;
-        let LastName = document.getElementById("inputLastNameId").value;
-        let Phone = document.getElementById("inputPhoneId").value;
-        let Email = document.getElementById("inputEmailId").value;
-        let Country = document.getElementById("selectCountyId").value;
-        let Town = document.getElementById("selectTownId").value;
-        let Address = document.getElementById("textareaAddressId").value;
-
-        let atouLabel = document.getElementById("atou").checked;
-
-        let emailPattern = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/g;
-
-        if(FirstName.trim().length < 2){
-            this.setGeneralValidFormErrorMessages("msgFirstNameId", Translation.translate('tr','NameAlert'));
-        }if(LastName.trim().length < 2){
-            this.setGeneralValidFormErrorMessages("msgLastNameId", Translation.translate('tr','SurnameAlert'));
-        }if(Phone.trim().length < 6){
-            this.setGeneralValidFormErrorMessages("msgPhoneId", Translation.translate('tr','PhoneAlert'));
-        }if(!emailPattern.test(Email)){
-            this.setGeneralValidFormErrorMessages("msgEmailId", Translation.translate('tr','EmailAlert'));
-        }if(Country === ""){
-            this.setGeneralValidFormErrorMessages("msgCountyId", Translation.translate('tr','PleaseChoose'));
-        }if(Town === ""){
-            this.setGeneralValidFormErrorMessages("msgTownId", Translation.translate('tr','PleaseChoose'));
-        }if(Address.trim().length < 10){
-            this.setGeneralValidFormErrorMessages("msgAddressId", Translation.translate('tr','MessageAlert'));
-        }if(!atouLabel){
-            document.getElementById('atoulabel').classList.add("checkederror");
-        }else{
-            document.getElementById('inputFirstNameId').value = "";
-            document.getElementById('inputLastNameId').value = "";
-            document.getElementById('inputPhoneId').value = "";
-            document.getElementById('inputEmailId').value = "";
-
-            document.getElementById('inputFirstNameId').style.borderColor = "rgba(117,140,163,0.3)";
-            document.getElementById('inputLastNameId').style.borderColor = "rgba(117,140,163,0.3)";
-            document.getElementById('inputPhoneId').style.borderColor = "rgba(117,140,163,0.3)";
-            document.getElementById('inputEmailId').style.borderColor = "rgba(117,140,163,0.3)";
-
-            document.getElementById('msgFirstNameId').innerHTML = " ";
-            document.getElementById('msgLastNameId').innerHTML = " ";
-            document.getElementById('msgPhoneId').innerHTML = " ";
-            document.getElementById('msgEmailId').innerHTML = " ";
-
-            document.getElementById('iconFirstNameId').style.display = "none";
-            document.getElementById('iconLastNameId').style.display = "none";
-            document.getElementById('iconPhoneId').style.display = "none";
-            document.getElementById('iconEmailId').style.display = "none";
-        }
-    }
-
     setGeneralValidFormErrorMessages(inputIdSelector, inputErrorMessage, inputAddErrorMessageClass, inputRemoveErrorMessageClass){
         let ErrorMessageText = document.getElementById(inputIdSelector);
         ErrorMessageText.innerHTML = inputErrorMessage;

@@ -520,34 +520,8 @@
 									<span class="inputerrormessage" id="msgEmailId"></span>
 								</div>
 							</div>
-						</fieldset>
-						<fieldset>
-							<legend class="legendline"><span>ADRES</span></legend>
-							<div class="form-row">
-								<div class="form-group col-sm">
-									<label>İL</label>
-									<select id="selectCountyId" class="custom-select" name="county" required oninput="generalvalidform.verifyContent('selectPleaseChoose','selectCountyId','msgCountyId','iconCountyId')" onfocusout="generalvalidform.verifyContentErrorDelete('selectPleaseChoose','selectCountyId','msgCountyId','iconCountyId')">
-										<option value="" selected disabled>Seçiniz</option>
-										<option value="1">İSTANBUL</option>
-										<option value="2">İZMİR</option>
-										<option value="3">ANKARA</option>
-									</select>
-									<i class="inputcheckicon" id="iconCountyId"></i>
-									<span class="inputerrormessage" id="msgCountyId"></span>
-								</div>
-								<div class="form-group col-sm">
-									<label>İLÇE</label>
-									<select id="selectTownId" class="custom-select" name="town" required oninput="generalvalidform.verifyContent('selectPleaseChoose','selectTownId','msgTownId','iconTownId')" onfocusout="generalvalidform.verifyContentErrorDelete('selectPleaseChoose','selectTownId','msgTownId','iconTownId')">
-										<option value="" selected disabled>Seçiniz</option>
-										<option value="1">MASLAK</option>
-										<option value="2">MECİDİYEKÖY</option>
-									</select>
-									<i class="inputcheckicon" id="iconTownId"></i>
-									<span class="inputerrormessage" id="msgTownId"></span>
-								</div>
-							</div>
 							<div class="form-group">
-								<label>CADDE / SOKAK / KAPI NO:</label>
+								<label>ADRES</label>
 								<textarea id="textareaAddressId" name="address" class="form-control" rows="4" cols="" required oninput="generalvalidform.verifyContent('textareaMessageProcess','textareaAddressId','msgAddressId','iconAddressId')" onfocusout="generalvalidform.verifyContentErrorDelete('textareaMessageProcess','textareaAddressId','msgAddressId','iconAddressId')"></textarea>
 								<i class="inputcheckicon" id="iconAddressId"></i>
 								<span class="inputerrormessage" id="msgAddressId"></span>
@@ -592,19 +566,6 @@
 <script src="https://www.google.com/recaptcha/api.js" async=""></script>
 <script src="assets/cdn/core.js"></script>
 <script src="assets/dist/js/core.js"></script>
-
-
-<script type="text/javascript">
-
-	$(window).on('load',function(){
-
-		/*$('#RegisterLPModal').modal('show');*/
-
-	});
-
-</script>
-
-
 <script type="text/javascript">
 
 	function verifyValidFirstName() {
@@ -677,40 +638,6 @@
 		return true;
 	}
 
-	function verifyValidCountry() {
-		if (document.getElementById('selectCountyId').value === "") {
-			document.getElementById('iconCountyId').classList.add("error");
-			document.getElementById('iconCountyId').classList.remove("check");
-			document.getElementById('msgCountyId').innerText = "SEÇİNİZ";
-
-			return false;
-		} else {
-			document.getElementById('iconCountyId').classList.add("check");
-			document.getElementById('iconCountyId').classList.remove("error");
-			document.getElementById('msgCountyId').innerText = "";
-
-			return true;
-		}
-		return true;
-	}
-
-	function verifyValidTown() {
-		if (document.getElementById('selectTownId').value === "") {
-			document.getElementById('iconTownId').classList.add("error");
-			document.getElementById('iconTownId').classList.remove("check");
-			document.getElementById('msgTownId').innerText = "SEÇİNİZ";
-
-			return false;
-		} else {
-			document.getElementById('iconTownId').classList.add("check");
-			document.getElementById('iconTownId').classList.remove("error");
-			document.getElementById('msgTownId').innerText = "";
-
-			return true;
-		}
-		return true;
-	}
-
 	function verifyValidAddress() {
 		if (document.getElementById('textareaAddressId').value.length < 10) {
 			document.getElementById('iconAddressId').classList.add("error");
@@ -744,13 +671,23 @@
 	}
 
 	function submitValidForm() {
-		if (!verifyValidFirstName() || !verifyValidLastName() || !verifyValidPhone() || !verifyValidEmail() || !verifyValidCountry() || !verifyValidTown() || !verifyValidAddress() || !verifyValidTermsOfUse()) {
+		if (!verifyValidFirstName() || !verifyValidLastName() || !verifyValidPhone() || !verifyValidEmail() || !verifyValidAddress() || !verifyValidTermsOfUse()) {
 			console.log("HATA");
 			return false;
 		} else {
 			console.log("DOGRU");
 		}
 	}
+
+</script>
+
+<script type="text/javascript">
+
+	$(window).on('load',function(){
+
+		/*$('#RegisterLPModal').modal('show');*/
+
+	});
 
 </script>
 <!-- Scripts -->
