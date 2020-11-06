@@ -203,7 +203,7 @@
 			<div class="modal-form bottomlinebtnactive">
 				<div class="modal-form-headtitle">KAYIT BİLGİLERİ</div>
 				<div class="modal-form-body">
-					<form class="icrypexform formlabelvalidation" action="" autocomplete="off" novalidate>
+					<form class="icrypexform formlabelvalidation" action="" method="post" autocomplete="off" onsubmit="return submitValidForm();" novalidate>
 						<div class="alertset">
 							<div class="alert alert-big alert-sweet alert-sweet-small alert-success alert-dismissible fade show" role="alert">
 								<div class="alert-flex">
@@ -571,7 +571,7 @@
 								</div>
 							</div>
 							<div class="bottomlinebtn">
-								<button type="button" class="btn btn-info rounded-pill" onclick="generalvalidform.sendLPCryptoBookAppForm()">KAYIT OL</button>
+								<button type="submit" class="btn btn-info rounded-pill">KAYIT OL</button>
 							</div>
 						</fieldset>
 
@@ -601,6 +601,156 @@
 		/*$('#RegisterLPModal').modal('show');*/
 
 	});
+
+</script>
+
+
+<script type="text/javascript">
+
+	function verifyValidFirstName() {
+		if (document.getElementById('inputFirstNameId').value.length < 2) {
+			document.getElementById('iconFirstNameId').classList.add("error");
+			document.getElementById('iconFirstNameId').classList.remove("check");
+			document.getElementById('msgFirstNameId').innerText = "EN AZ 2 KARAKTER";
+
+			return false;
+		} else {
+			document.getElementById('iconFirstNameId').classList.add("check");
+			document.getElementById('iconFirstNameId').classList.remove("error");
+			document.getElementById('msgFirstNameId').innerText = "";
+
+			return true;
+		}
+		return true;
+	}
+
+	function verifyValidLastName() {
+		if (document.getElementById('inputLastNameId').value.length < 2) {
+			document.getElementById('iconLastNameId').classList.add("error");
+			document.getElementById('iconLastNameId').classList.remove("check");
+			document.getElementById('msgLastNameId').innerText = "EN AZ 2 KARAKTER";
+
+			return false;
+		} else {
+			document.getElementById('iconLastNameId').classList.add("check");
+			document.getElementById('iconLastNameId').classList.remove("error");
+			document.getElementById('msgLastNameId').innerText = "";
+
+			return true;
+		}
+		return true;
+	}
+
+	function verifyValidPhone() {
+		if (document.getElementById('inputPhoneId').value.replace(/\s/g, "").length < 6) {
+			document.getElementById('iconPhoneId').classList.add("error");
+			document.getElementById('iconPhoneId').classList.remove("check");
+			document.getElementById('msgPhoneId').innerText = "HATALI TELEFON";
+
+			return false;
+		} else {
+			document.getElementById('iconPhoneId').classList.add("check");
+			document.getElementById('iconPhoneId').classList.remove("error");
+			document.getElementById('msgPhoneId').innerText = "";
+
+			return true;
+		}
+		return true;
+	}
+
+	function verifyValidEmail() {
+		var emailPattern = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/g;
+
+		if (!document.getElementById('inputEmailId').value.match(emailPattern)) {
+			document.getElementById('iconEmailId').classList.add("error");
+			document.getElementById('iconEmailId').classList.remove("check");
+			document.getElementById('msgEmailId').innerText = "HATALI E-POSTA";
+
+			return false;
+		} else {
+			document.getElementById('iconEmailId').classList.add("check");
+			document.getElementById('iconEmailId').classList.remove("error");
+			document.getElementById('msgEmailId').innerText = "";
+
+			return true;
+		}
+		return true;
+	}
+
+	function verifyValidCountry() {
+		if (document.getElementById('selectCountyId').value === "") {
+			document.getElementById('iconCountyId').classList.add("error");
+			document.getElementById('iconCountyId').classList.remove("check");
+			document.getElementById('msgCountyId').innerText = "SEÇİNİZ";
+
+			return false;
+		} else {
+			document.getElementById('iconCountyId').classList.add("check");
+			document.getElementById('iconCountyId').classList.remove("error");
+			document.getElementById('msgCountyId').innerText = "";
+
+			return true;
+		}
+		return true;
+	}
+
+	function verifyValidTown() {
+		if (document.getElementById('selectTownId').value === "") {
+			document.getElementById('iconTownId').classList.add("error");
+			document.getElementById('iconTownId').classList.remove("check");
+			document.getElementById('msgTownId').innerText = "SEÇİNİZ";
+
+			return false;
+		} else {
+			document.getElementById('iconTownId').classList.add("check");
+			document.getElementById('iconTownId').classList.remove("error");
+			document.getElementById('msgTownId').innerText = "";
+
+			return true;
+		}
+		return true;
+	}
+
+	function verifyValidAddress() {
+		if (document.getElementById('textareaAddressId').value.length < 10) {
+			document.getElementById('iconAddressId').classList.add("error");
+			document.getElementById('iconAddressId').classList.remove("check");
+			document.getElementById('msgAddressId').innerText = "EN AZ 10 KARAKTER";
+
+			return false;
+		} else {
+			document.getElementById('iconAddressId').classList.add("check");
+			document.getElementById('iconAddressId').classList.remove("error");
+			document.getElementById('msgAddressId').innerText = "";
+
+			return true;
+		}
+		return true;
+	}
+
+	function verifyValidTermsOfUse() {
+		var termsOfUseCheck = document.getElementById('atou').checked;
+
+		if (!termsOfUseCheck) {
+			document.getElementById('atoulabel').classList.add("checkederror");
+
+			return false;
+		} else {
+			document.getElementById('atoulabel').classList.remove("checkederror");
+
+			return true;
+		}
+		return true;
+	}
+
+	function submitValidForm() {
+		if (!verifyValidFirstName() || !verifyValidLastName() || !verifyValidPhone() || !verifyValidEmail() || !verifyValidCountry() || !verifyValidTown() || !verifyValidAddress() || !verifyValidTermsOfUse()) {
+			console.log("HATA");
+			return false;
+		} else {
+			console.log("DOGRU");
+		}
+	}
 
 </script>
 <!-- Scripts -->
