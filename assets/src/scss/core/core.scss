@@ -590,7 +590,7 @@ footer{
 				font-weight: 500;
 				max-width: 350px;
 				height: 40px;
-				margin-top: 2vw;
+				margin-top: 1.5vw;
 				border-radius: 50px;
 				overflow: hidden;
 
@@ -609,6 +609,7 @@ footer{
 					color: #004378;
 					background-color: white;
 					height: 100%;
+					text-align: left;
 
 				}
 
@@ -627,8 +628,10 @@ footer{
 
 		h1{
 			color:#fff;
-			font-size: 3.2vw;
-			line-height: 3.2vw;
+			//font-size: 3.2vw;
+			//line-height: 3.2vw;
+			font-size: 60px;
+			line-height: 60px;
 			font-weight: 500;
 			letter-spacing: -1px;
 			animation-fill-mode: both;
@@ -636,8 +639,6 @@ footer{
 			text-shadow: 0 0 5px #002246;
 
 			@media screen and(max-width:1950px){
-				font-size: 60px;
-				line-height: 60px;
 			}
 			@media screen and(max-width:$screenxl){
 				font-size: 50px;
@@ -677,33 +678,36 @@ footer{
 			}
 		}
 		h2{
-			font-size: 1.8vw;
-			line-height: 1.8vw;
+			//font-size: 1.8vw;
+			//line-height: 1.8vw;
+			font-size: 36px;
+			line-height: 1.2;
 			font-weight: 400;
 			letter-spacing: -0.55px;
 			color: white;
 			animation-fill-mode: both;
 			width:100%;
 			text-shadow: 0 0 5px #002246;
-			margin-top: 1.2vw;
+			//margin-top: 1.2vw;
+			margin-top: 0.8vw;
 
 			@media screen and(max-width:1950px){
 				font-size: 36px;
-				line-height: 36px;
+				//line-height: 36px;
 				margin-top: 20px;
 			}
 			@media screen and(max-width:$screenxl){
 				font-size: 30px;
-				line-height: 30px;
+				//line-height: 30px;
 				letter-spacing: 0;
 			}
 			@media screen and(max-width:$screenlg){
 				font-size: 24px;
-				line-height: 24px;
+				//line-height: 24px;
 			}
 			@media screen and(max-width:$screenmd){
 				font-size: 20px;
-				line-height: 20px;
+				//line-height: 20px;
 				text-align: left;
 				margin-top: 15px;
 			}
@@ -712,12 +716,12 @@ footer{
 			}
 			@media screen and(max-width:$screenxs){
 				font-size: 24px;
-				line-height: 24px;
+				//line-height: 24px;
 				margin-top: 15px;
 			}
 			@media screen and(max-width:400px){
 				line-height: 24px;
-				font-size: 24px;
+				//font-size: 24px;
 			}
 			b{
 				font-weight: 600;
